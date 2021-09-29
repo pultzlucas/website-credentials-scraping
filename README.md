@@ -7,7 +7,7 @@ To use the api you only need to put the website url on url param.
 
 example:
 
-.../?url=https://templo-website.herokuapp.com/
+  .../?url=https://github.com/pultzlucas/templo
 
 it returns...
 
