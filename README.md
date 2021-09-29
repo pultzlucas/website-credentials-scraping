@@ -3,9 +3,10 @@
 A Flask server that returns website credentials
 
 ## Usage
-To use the api you only need to inform the website url 
+To use the api you only need to put the website url on url param. 
 
 example:
+
 .../?url=https://templo-website.herokuapp.com/
 
 it returns...
