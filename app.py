@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify, send_file
 import requests
 from bs4 import BeautifulSoup
-from credentials import get_favicon_url, get_website_description, get_website_title
+from credentials import get_favicon_credentials, get_website_description, get_website_title
 
 app = Flask(__name__)
 
@@ -21,13 +21,14 @@ def get_info():
         title = get_website_title(html, url)
         tags_metadata = soup.find_all('meta')
         description = str(get_website_description(tags_metadata))
-        favicon_url = str(get_favicon_url(url))
+        favicon_credentials = get_favicon_credentials(url)
 
         return jsonify({
             'status': 'success',
             'title': title,
             'description': description,
-            'favicon_url': favicon_url
+            'favicon_url': favicon_credentials['url'],
+            'favicon_file_extension': favicon_credentials['file_extension']
         })
 
     except Exception as error:

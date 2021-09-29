@@ -20,11 +20,18 @@ def get_website_title(html, url):
     
     return title.text
 
-def get_favicon_url(url):
+def get_favicon_credentials(url):
     icons = favicon.get(url)
     if len(icons) == 0:
-        return 'https://website-credentials.herokuapp.com/default_icon'
-    return icons[0].url
+        return {
+            'url': 'https://website-credentials.herokuapp.com/default_icon',
+            'file_extension': 'png'
+        }
+
+    return {
+        'file_extension': icons[0].format,
+        'url': icons[0].url,
+    }
 
 def get_website_description(tags_metadata):
     description = ''
