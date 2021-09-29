@@ -23,7 +23,7 @@ def get_website_title(html, url):
 def get_favicon_url(url):
     icons = favicon.get(url)
     if len(icons) == 0:
-        return 'http://localhost:8080/default_icon'
+        return 'https://website-credentials.herokuapp.com/default_icon'
     return icons[0].url
 
 def get_website_description(tags_metadata):
