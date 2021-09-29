@@ -1,6 +1,6 @@
 # Website Credentials Scraping
 
-A Flask server that returns website credentials
+A Flask server that returns website credentials including title, description and favicon
 
 ## Usage
 To use the api you only need to put the website url on url param. 
